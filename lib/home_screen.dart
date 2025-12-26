@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'project_model.dart';
-import 'projects/01_login_screen/main_login.dart';
+import 'projects/01_login_screen_ui/main_login.dart';
+import 'projects/02_banking_app_ui/main_banking_app.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -10,6 +11,11 @@ class HomePage extends StatelessWidget {
       title: 'Login Page',
       description: 'Test sen bro',
       builder: (context) => LoginPage(),
+    ),
+    ProjectModel(
+      title: 'Banking App UI',
+      description: 'Test sen bro',
+      builder: (context) => BankingApp(),
     ),
   ];
 

@@ -71,11 +71,11 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
   Widget build(BuildContext context) {
     final primaryColor = Theme.of(context).colorScheme.primary;
     final textColor = Theme.of(context).colorScheme.onSurface;
-    double padding = MediaQuery.of(context).size.width * 0.1; // 8% of width
+    double padding = MediaQuery.of(context).size.width * 0.1;
 
     return Scaffold(
-      //USE LAYOUT BUILDER to get available height
       body: SafeArea(
+        //USE LAYOUT BUILDER to get available height
         child: LayoutBuilder(
           builder: (context, constraints) {
             return SingleChildScrollView(
