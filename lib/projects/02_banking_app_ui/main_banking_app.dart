@@ -12,7 +12,8 @@ class BankingApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const primaryBlue = Color(0xFF5465FF);
+    // const primaryBlue = Color(0xFF5465FF);
+    const primaryBlue = Color(0xFF5E5CE5);
     const backgroundGrey = Color(0xFFF5F7FA);
     const darkText = Color(0xFF1E1E2D);
     const greyText = Color(0xFF7D8499);
