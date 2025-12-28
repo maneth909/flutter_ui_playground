@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'main_banking_app.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -158,7 +159,17 @@ class _LoginScreenContentState extends State<LoginScreenContent> {
                         const SizedBox(height: 18),
 
                         // Login Button
-                        ElevatedButton(onPressed: () {}, child: Text('LOGIN')),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BankingApp(),
+                              ),
+                            );
+                          },
+                          child: Text('LOGIN'),
+                        ),
 
                         // Footer
                         const SizedBox(height: 30),
