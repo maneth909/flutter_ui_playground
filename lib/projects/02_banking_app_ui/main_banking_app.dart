@@ -26,9 +26,7 @@ class BankingApp extends StatelessWidget {
           onSurface: darkText,
           onSurfaceVariant: greyText,
         ),
-        textTheme: GoogleFonts.plusJakartaSansTextTheme(
-          Theme.of(context).textTheme,
-        ),
+        textTheme: GoogleFonts.plusJakartaSansTextTheme(),
       ),
       child: BankingHomePageContent(),
     );

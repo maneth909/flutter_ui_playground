@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'theme_extension.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'transation_model.dart';
+import 'model/transaction_model.dart';
+import 'send_money_main.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -198,34 +199,38 @@ class _HomePageState extends State<HomePage> {
     BuildContext context, {
     required IconData icon,
     required String label,
+    VoidCallback? onTap,
   }) {
-    return Column(
-      children: [
-        Container(
-          padding: EdgeInsets.all(16),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.05),
-                blurRadius: 10,
-                offset: Offset(0, 4),
-              ),
-            ],
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.05),
+                  blurRadius: 10,
+                  offset: Offset(0, 4),
+                ),
+              ],
+            ),
+            child: Icon(icon, size: 24, color: context.primaryBlue),
           ),
-          child: Icon(icon, size: 24, color: context.primaryBlue),
-        ),
-        SizedBox(height: 6),
-        Text(
-          label,
-          style: TextStyle(
-            color: context.textColor,
-            fontSize: 14,
-            fontWeight: FontWeight.w600,
+          SizedBox(height: 6),
+          Text(
+            label,
+            style: TextStyle(
+              color: context.textColor,
+              fontSize: 14,
+              fontWeight: FontWeight.w600,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -239,6 +244,12 @@ class _HomePageState extends State<HomePage> {
             context,
             icon: FontAwesomeIcons.arrowUpRightFromSquare,
             label: 'Send',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SendMoneyMain()),
+              );
+            },
           ),
           _navMenuItem(context, icon: FontAwesomeIcons.qrcode, label: 'Scan'),
           _navMenuItem(
